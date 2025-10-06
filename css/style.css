@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@200..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Nata+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.loaded {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+}
+
+.loading svg {
+    width: 60px;
+    height: 45px;
+}
+
+.loading svg polyline {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+    stroke: #ff4d5033;
+}
+
+.loading svg polyline#front {
+    stroke: #ff4d4f;
+    stroke-dasharray: 48, 144;
+    stroke-dashoffset: 192;
+    animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+    72.5% {
+        opacity: 0;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.heart {
+    position: relative;
+    width: 50px;
+    height: 60px;
+    animation: pulse 1s infinite;
+    padding-bottom: 230px;
+    cursor: pointer;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 95px;
+    height: 160px;
+    background: #ff0000;
+    border-radius: 50px 50px 0 0;
+}
+
+.heart::before {
+    left: -40px;
+    transform: rotate(45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(-45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.name {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+    font-family: "Nata Sans", sans-serif;
+}
+
+.heart_color {
+    color: #ff0000;
+}
