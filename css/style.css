@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@200..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Nata+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     display: flex;
     justify-content: center;
@@ -8,8 +9,20 @@ body {
     margin: 0;
 }
 
-.loaded { display: flex; flex-direction: row; align-items: center; gap: 80px; }
+.loaded {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+}
 
+/* ⭐ إضافة مهمة */
+.content {
+    position: relative;
+    text-align: center;
+}
+
+/* loading */
 .loading svg {
     width: 60px;
     height: 45px;
@@ -42,6 +55,7 @@ body {
     }
 }
 
+/* heart */
 .heart {
     position: relative;
     width: 50px;
@@ -75,33 +89,26 @@ body {
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
-.content {
-    position: relative;
-    text-align: center;
-}
+
+/* text */
 .name {
-    font-size: 32px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    font-size: 40px;
     font-weight: bold;
     color: white;
     opacity: 0;
-    margin-top: 20px;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transform: translateY(20px);
+    transition: all 0.6s ease-in-out;
     font-family: "Nata Sans", sans-serif;
+    white-space: nowrap;
 }
-
 
 .heart_color {
     color: #ff0000;
 }
-
