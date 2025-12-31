@@ -8,11 +8,7 @@ body {
     margin: 0;
 }
 
-.loaded {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-}
+.loaded { display: flex; flex-direction: row; align-items: center; gap: 80px; }
 
 .loading svg {
     width: 60px;
@@ -108,3 +104,4 @@ body {
 .heart_color {
     color: #ff0000;
 }
+
