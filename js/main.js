@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         names.forEach((el, index) => {
             setTimeout(() => {
                 el.style.opacity = "1";
-                el.style.transform = "translateY(0)";
+                el.style.transform = "translateX(-50%) translateY(0)";
             }, index * 700);
         });
     });
